@@ -32,7 +32,8 @@ io.on("connection", (socket) => {
         }
     });
     socket.on("sendMessage", async ({ chatId, content, senderId, receiverId }: { chatId: string, content: string, senderId: string, receiverId: string }) => {
-        console.log(chatId)
+        // console.log(chatId)
+        console.log("message", chatId, content, senderId, receiverId)
         try {
             io.to(chatId).emit("newMessage", { chatId, content, senderId, receiverId });
         } catch (error) {

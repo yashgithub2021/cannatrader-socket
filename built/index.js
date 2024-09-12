@@ -43,7 +43,8 @@ io.on("connection", (socket) => {
         }
     }));
     socket.on("sendMessage", ({ chatId, content, senderId, receiverId }) => __awaiter(void 0, void 0, void 0, function* () {
-        console.log(chatId);
+        // console.log(chatId)
+        console.log("message", chatId, content, senderId, receiverId);
         try {
             io.to(chatId).emit("newMessage", { chatId, content, senderId, receiverId });
         }
